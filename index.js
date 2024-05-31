@@ -5,6 +5,10 @@ const romance = ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon"]
 const scify = ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop"]
 const fantasy = ["Death Note", "Ranma 1/2", "Lain", "One Piece"]
 
+function optionAlert() {
+    alert("You need to choose an option");
+}
+
 function showAnime() {
     let actionBox = document.getElementById("action");
     if (actionBox.checked) {
@@ -13,6 +17,7 @@ function showAnime() {
         document.getElementById("animeSelection").textContent = action[index-1];
     } else {
         console.log("I remain unchecked");
+        optionAlert();
     }
 }
 
