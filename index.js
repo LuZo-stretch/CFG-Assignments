@@ -10,19 +10,12 @@ function showAnime() {
     if (actionBox.checked) {
         const index = document.getElementById("number").value;
         console.log(action[index-1]);
-        return action[index - 1];
+        document.getElementById("animeSelection").textContent = action[index-1];
     } else {
         console.log("I remain unchecked");
     }
 }
 
-// const animeSelection = document.getElementById('animeSelection').textContent;
-// let result = "";
 
-// for (let i = 0; i <= 1; i++) {
-//     result += animeSelection + " ";
-// }
-
-// document.getElementById('animeSelection').textContent = result;
 
 
