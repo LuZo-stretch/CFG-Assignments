@@ -14,7 +14,7 @@
         </div>
 
         <div>
-            <input type="checkbox" id="action" name="action" onclick="showStatus()" />
+            <input type="checkbox" id="action" name="action" />
             <label for="action">Action</label>
         </div>
 
@@ -36,7 +36,7 @@
     <h3>How many options would you like?</h3>
         <input type="number" id="number" placeholder="1-3">
         <button onclick="showAnime()">Anime me!</button>
-        <p>You should watch: </p>
+        <p>You should watch: <div id="animeSelection"></div></p>
 </body>
 <script src="./index.js"></script>
 </html>
