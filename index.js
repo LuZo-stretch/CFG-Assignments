@@ -5,3 +5,15 @@ const romance = ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon"]
 const scify = ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop"]
 const fantasy = ["Death Note", "Ranma 1/2", "Lain", "One Piece"]
 
+function showStatus() {
+    let actionBox = document.getElementById('action');
+    if (actionBox.checked) {
+        console.log("I am checked!");
+    } else {
+        console.log("I remain unchecked");
+    }
+}
+
+
+
+
