@@ -1,25 +1,30 @@
 console.log("HELLO")
-const action = ["Attack on Titan", "Berserk", "Bleach", "Blood+","Dragon Ball", "Fullmetal Alchemist", "Neon Genesis Evangelion", "Demon Hunter"];
-const comedy = ["Ranma 1/2", "Golden Boy", "Sailor Moon"]
-const romance = ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon"]
-const scify = ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop"]
-const fantasy = ["Death Note", "Ranma 1/2", "Lain", "One Piece"]
-
-function optionAlert() {
-    alert("You need to choose an option");
+const animeCategories = {
+    action: ["Attack on Titan", "Berserk", "Bleach", "Blood+","Dragon Ball", "Fullmetal Alchemist", "Neon Genesis Evangelion", "Demon Hunter"],
+    comedy: ["Ranma 1/2", "Golden Boy", "Sailor Moon"],
+    romance: ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon"],
+    scify: ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop"],
+    fantasy: ["Death Note", "Ranma 1/2", "Lain", "One Piece"]
 }
+
+
 
 function showAnime() {
-    let actionBox = document.getElementById("action");
-    if (actionBox.checked) {
-        const index = document.getElementById("number").value;
-        console.log(action[index-1]);
-        document.getElementById("animeSelection").textContent = action[index-1];
+    const index = document.getElementById("number").value-1;
+    const category = document.querySelector('input[name="anime"]:checked').value;
+    console.log(category);
+
+    const animeList = animeCategories[category]; 
+
+    if (animeList && index >= 0 && index < animeList.length) {
+        document.getElementById("animeSelection").textContent = animeList[index];
     } else {
-        console.log("I remain unchecked");
-        optionAlert();
+        document.getElementById("animeSelection").textContent = "That's an unlucky number! Try another!";
     }
-}
+    
+    }
+    
+
 
 
 
