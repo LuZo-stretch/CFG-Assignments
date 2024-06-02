@@ -22,7 +22,7 @@ function showAnime() {
         let animeSelection = "";
         for (let i = 0; i < number; i++) {
             if (i < animeList.length) {
-                animeSelection += animeList[i] + " ";
+                animeSelection += animeList[i] + ", ";
             } else {
                 animeSelection += "I've run out of titles for you 😓";
                 break;
