@@ -1,11 +1,11 @@
 console.log("HELLO")
 
 const animeCategories = {
-    action: ["Attack on Titan", "Berserk", "Bleach", "Blood+","Dragon Ball", "Fullmetal Alchemist", "Neon Genesis Evangelion", "Demon Hunter"],
-    comedy: ["Ranma 1/2", "Golden Boy", "Sailor Moon"],
-    romance: ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon"],
-    scifi: ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop"],
-    fantasy: ["Death Note", "Ranma 1/2", "Lain", "One Piece"]
+    action: ["Ruroni Kenshin", "Attack on Titan", "Berserk", "Bleach", "Demon Slayer", "Blood+","Dragon Ball", "Fullmetal Alchemist", "Neon Genesis Evangelion", "Akira", "Demon Hunter", "Saint Seya", "Blue Eyed Samurai"],
+    comedy: ["Ranma 1/2", "Golden Boy", "Sailor Moon", "Wotakoi: Love is hard for otaku", "Spy X Family", "Grand Blue", "One Punch Man", "Cowboy Bebop", "Lupin III: The Castle of Cagliostro"],
+    romance: ["Nana", "Kare Kano", "Marmalade boy", "Sailor Moon", "Inuyasha", "My Happy Marriage", "Wotakoi: Love is hard for otaku"],
+    scifi: ["Ghost in the shell", "Neon Genesis Evangelion", "Cowboy Bebop", "Psycho-Pass", "One Punch Man", "Akira"],
+    fantasy: ["Death Note", "Ranma 1/2", "Lain", "One Piece", "Saint Seya", "Onimusha", "Dragon Ball Z", "The Vision of Escaflowne"]
 }
 
 function showAnime() {
