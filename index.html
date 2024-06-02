@@ -3,40 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment 2: Javascript</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>What anime should I watch next?</h1>
-    <h3>Select a category:</h3>
-        <div>
-            <input type="radio" id="comedy" name="anime" value="comedy" />
-            <label for="comedy">Comedy</label>
-        </div>
+    <div class="container">
+        <h1>What anime should I watch next?</h1>
+        <h3 id="category">Category:</h3>
+        <p id="selection">Select one category:</p>
+            <div class="types">
+                <div>
+                    <input type="radio" id="comedy" name="anime" value="comedy" />
+                    <label for="comedy">Comedy</label>
+                </div>
 
-        <div>
-            <input type="radio" id="action" name="anime" value="action" />
-            <label for="action">Action</label>
-        </div>
+                <div>
+                    <input type="radio" id="action" name="anime" value="action" />
+                    <label for="action">Action</label>
+                </div>
+            </div>
+            <div class="types">
+                <div>
+                    <input type="radio" id="romance" name="anime" value="romance" />
+                    <label for="romance">Romance</label>
+                </div>
 
-        <div>
-            <input type="radio" id="romance" name="anime" value="romance" />
-            <label for="romance">Romance</label>
-        </div>
+                <div>
+                    <input type="radio" id="scifi" name="anime" value="scifi"/>
+                    <label for="scifi">Sci-fi</label>
+                </div>
+            </div>
+            <div class="types">
+                <div>
+                    <input type="radio" id="fantasy" name="anime" value="fantasy" />
+                    <label for="fantasy">Fantasy</label>
+                </div>
+            </div>
 
-        <div>
-            <input type="radio" id="scifi" name="anime" value="scifi"/>
-            <label for="scifi">Sci-fi</label>
-        </div>
-
-        <div>
-            <input type="radio" id="fantasy" name="anime" value="fantasy" />
-            <label for="fantasy">Fantasy</label>
-        </div>
-
-    <h3>How many options would you like?</h3>
-        <input type="number" id="number" placeholder="1-3">
-        <button onclick="showAnime()">Anime me!</button>
-        <p>You should watch: <div id="animeSelection"></div></p>
+        <h3>How many options would you like?</h3>
+            <input type="number" id="number" placeholder="1-5">
+            <button onclick="showAnime()" class="button">Anime me!</button>
+            <h4>You should watch: </h4>
+            <p><div id="animeSelection"></div></p>
+    </div>
 </body>
 <script src="./index.js"></script>
 <script src="./assignment_questions.js"></script>
