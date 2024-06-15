@@ -19,7 +19,7 @@ function showAnime() {
     if (number > 0 && number <= animeList.length && category) {
         console.log("The anime list for the category selected is:", animeList);
 
-        let animeSelection = "";
+        let animeSelection = " ";
         for (let i = 0; i < number; i++) {
             if (i < animeList.length) {
                 animeSelection += animeList[i] + " ⭐ ";
