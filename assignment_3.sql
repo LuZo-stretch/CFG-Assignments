@@ -88,3 +88,7 @@ VALUES
 (8, 4, '18:30:00'),
 (8, 7, '21:30:00'),
 (8, 6, '22:00:00');
+
+SELECT * FROM shows;
+ALTER TABLE club_members
+ADD CONSTRAINT unique_member_email UNIQUE (member_email);
