@@ -107,7 +107,7 @@ WHERE area = 'Brixton';
 SELECT member_id, member_name, member_email FROM club_members
 WHERE area = 'Brixton';
 
-SELECT movie_id, title, rating FROM movies
+SELECT movie_id, title, rating FROM movies --- AGGREGATE FUNCTION
 WHERE rating > 3 
 ORDER BY rating DESC;
 
@@ -116,3 +116,10 @@ WHERE genre = 'scifi';
 
 DELETE FROM club_members WHERE member_id = 9;
 SELECT * FROM club_members;
+
+SELECT area, AVG(plushness) AS average_plushness
+FROM cinemas
+GROUP BY area
+HAVING AVG(plushness) > 2
+ORDER BY average_plushness DESC; --- AGGREGATE FUNCTION
+
