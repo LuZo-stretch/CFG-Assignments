@@ -67,3 +67,23 @@ VALUES
 (6, 'Suzume', 'anime', 5),
 (7, 'Scream', 'horror', 3),
 (8, 'Hard Miles', 'drama', 1);
+
+INSERT INTO shows
+(cinema_id, movie_id)
+VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 2),
+(2, 8),
+(3, 6),
+(4, 7),
+(4, 6),
+(5, 4),
+(6, 5),
+(6, 3),
+(7, 1),
+(7, 3),
+(8, 4),
+(8, 7),
+(8, 6);
