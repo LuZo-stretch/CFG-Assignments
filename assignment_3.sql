@@ -21,7 +21,8 @@ area VARCHAR(20));
 
 CREATE TABLE shows
 (cinema_id INTEGER,
-movie_id INTEGER);
+movie_id INTEGER,
+show_time TIME);
 ALTER TABLE shows
 ADD CONSTRAINT fk_cinema_id
 FOREIGN KEY (cinema_id)
@@ -69,21 +70,21 @@ VALUES
 (8, 'Hard Miles', 'drama', 1);
 
 INSERT INTO shows
-(cinema_id, movie_id)
+(cinema_id, movie_id, show_time)
 VALUES
-(1, 1),
-(1, 2),
-(1, 3),
-(2, 2),
-(2, 8),
-(3, 6),
-(4, 7),
-(4, 6),
-(5, 4),
-(6, 5),
-(6, 3),
-(7, 1),
-(7, 3),
-(8, 4),
-(8, 7),
-(8, 6);
+(1, 1, '18:30:00'),
+(1, 2, '22:30:00'),
+(1, 3, '21:00:00'),
+(2, 2, '18:30:00'),
+(2, 8, '21:00:00'),
+(3, 6, '18:30:00'),
+(4, 7, '18:30:00'),
+(4, 6, '21:00:00'),
+(5, 4, '18:30:00'),
+(6, 5, '18:30:00'),
+(6, 3, '21:00:00'),
+(7, 1, '18:30:00'),
+(7, 3, '21:00:00'),
+(8, 4, '18:30:00'),
+(8, 7, '21:30:00'),
+(8, 6, '22:00:00');
