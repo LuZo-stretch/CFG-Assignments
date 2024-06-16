@@ -100,3 +100,16 @@ VALUES
 (9, 'Paco Escobar', 'paquito@gmail.com');
 
 SELECT * FROM club_members;
+
+SELECT cinema_id, cinema_name FROM cinemas
+WHERE area = 'Brixton';
+
+SELECT member_id, member_name, member_email FROM club_members
+WHERE area = 'Brixton';
+
+SELECT movie_id, title, rating FROM movies
+WHERE rating > 3 
+ORDER BY rating DESC;
+
+SELECT movie_id, title, rating FROM movies
+WHERE genre = 'scifi';
