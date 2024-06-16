@@ -55,3 +55,15 @@ VALUES
 (6, 'Florence Galarza', 'florpi@gmail.com', 'Brixton'),
 (7, 'Fulano Tal', 'fulanito@gmail.com', 'Bethnal Green'),
 (8, 'Mengano Cual', 'menganito@gmailcom', 'Greenwich');
+
+INSERT INTO movies
+(movie_id, title, genre, rating)
+VALUES
+(1, 'Furiosa', 'action', 3),
+(2, 'Fall Guy', 'comedy', 4),
+(3, 'Arcadian', 'horror', 4),
+(4, 'Star Trek III', 'scifi', 3),
+(5, 'The Matrix', 'scifi', 5),
+(6, 'Suzume', 'anime', 5),
+(7, 'Scream', 'horror', 3),
+(8, 'Hard Miles', 'drama', 1);
