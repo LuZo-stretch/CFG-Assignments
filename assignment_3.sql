@@ -1,5 +1,9 @@
+--- DB CREATION AND SELECTION
+
 CREATE DATABASE cinema_club;
 USE cinema_club;
+
+--- TABLES CREATION
 
 CREATE TABLE movies
 (movie_id INTEGER PRIMARY KEY,
@@ -23,6 +27,9 @@ CREATE TABLE shows --- This table will let me check which cinema is playing whic
 (cinema_id INTEGER,
 movie_id INTEGER,
 show_time TIME);
+
+--- FOREIGN KEY CONSTRAINTS 
+
 ALTER TABLE shows
 ADD CONSTRAINT fk_cinema_id --- Added FOREIGN KEYS to link to the relevant tables
 FOREIGN KEY (cinema_id)
@@ -32,6 +39,8 @@ ALTER TABLE shows
 ADD CONSTRAINT fk_movie_id
 FOREIGN KEY (movie_id)
 REFERENCES movies (movie_id);
+
+--- DATA INSERTION
 
 INSERT INTO cinemas --- Inserting cinemas values for each column
 (cinema_id, cinema_name, area, plushness)
@@ -91,13 +100,17 @@ VALUES
 
 -- SELECT * FROM shows; --- Just checking all was showing correctly
 
-ALTER TABLE club_members --- All emails must be unique to avoid members signing up other friends with just one email. 
+--- UNIQUE CONSTRAIN
+ALTER TABLE club_members --- All emails must be unique to avoid duplication of member entries with the same email. 
 ADD CONSTRAINT unique_member_email UNIQUE (member_email);
 
 INSERT INTO club_members --- A new member joins
 (member_id, member_name, member_email)
 VALUES
 (9, 'Paco Escobar', 'paquito@gmail.com');
+
+
+--- DATA RETRIEVE: QUERIES
 
 SELECT * FROM club_members;
 
@@ -114,8 +127,12 @@ ORDER BY rating DESC;
 SELECT movie_id, title, rating FROM movies --- I want to see a scifi movie, what is playing now?
 WHERE genre = 'scifi';
 
+---- DATA MODIFICATION: DELETE
+
 DELETE FROM club_members WHERE member_id = 9; --- I just saw that Paco Escobar didn't specify an area, it will be difficult to know what events suit him and after emailing him several times to ask, he never replied. We are deleting him as a member. 
 SELECT * FROM club_members;
+
+--- JOINS
 
 SELECT area, AVG(plushness) AS average_plushness --- I want to see the average plushness level of cinemas in each area
 FROM cinemas
@@ -142,7 +159,9 @@ INNER JOIN shows s ON c.cinema_id = s.cinema_id
 INNER JOIN movies m ON s.movie_id = m.movie_id
 ORDER BY c.cinema_name, s.show_time;
 
-SELECT member_name, UPPER(member_email) AS uppercase_email
+--- IN-BUILT FUNCTIONS TO FORMAT DATA 
+
+SELECT member_name, UPPER(member_email) AS uppercase_email 
 FROM club_members;
 
 SELECT title, genre, DATE_FORMAT(show_time, '%H:%i') AS formatted_show_time
@@ -152,7 +171,9 @@ INNER JOIN movies ON shows.movie_id = movies.movie_id;
 SELECT CONCAT(cinema_name, ', ', area) AS cinema_address
 FROM cinemas;
 
-DELIMITER //  --- CREATE PROCEDURE TO SHOW ALL MOVIES BY CINEMA WITH THE MOVIE INFO AND THE CINEMA THEY ARE PLAYING AT. 
+--- STORED PROCEDURE
+
+DELIMITER //  --- Retrieves movies showing at a specified cinema and shows movie details and the cinema name. 
 CREATE PROCEDURE GetMoviesByCinema(cinema_id_param INTEGER)
 BEGIN
 SELECT m.title, m.genre, m.rating, c.cinema_name

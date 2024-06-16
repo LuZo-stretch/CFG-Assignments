@@ -4,6 +4,8 @@
 
 My group of friends that like to go to the cinema has grown and we have decided to create a club and organize ourselves better. We want to be able to find what movies are running in which cinema per area, and also see what other members are in the same area to organize events and be able to email them. To do this, I want to be able to store movies (title, genre, rating), cinemas (names, areas, and how plush or how ugly they are), club members (names, emails and the area they are based in). I also want to have a join table that will show the movies, cinemas they are playing in, and show times. I have written queries to add values for all these tables, and also a stored procedure that allows to select one cinema and show the movie, rating and the genre. Like this, the members always know what is playing near them. Some of the members want to organize a local event and have used a join by query to show members that are located in a specific area. Apparently, this created some drama in the club as other members felt excluded. 
 
+Summary: My SQL script sets up a relational DB (cinema_club) that can be used to manage movies, cinemas, club members and show times. It includes the requested actions/queries: insertion, constraints, queries with joins and also a stored procedure for querying movies by cinema. 
+
 ## Assignment 2 - Javascript
 
 * unshift(): Definition and example of use
