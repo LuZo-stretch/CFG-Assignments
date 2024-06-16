@@ -90,5 +90,13 @@ VALUES
 (8, 6, '22:00:00');
 
 SELECT * FROM shows;
+
 ALTER TABLE club_members
 ADD CONSTRAINT unique_member_email UNIQUE (member_email);
+
+INSERT INTO club_members
+(member_id, member_name, member_email)
+VALUES
+(9, 'Paco Escobar', 'paquito@gmail.com');
+
+SELECT * FROM club_members;
