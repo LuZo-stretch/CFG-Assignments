@@ -113,3 +113,6 @@ ORDER BY rating DESC;
 
 SELECT movie_id, title, rating FROM movies
 WHERE genre = 'scifi';
+
+DELETE FROM club_members WHERE member_id = 9;
+SELECT * FROM club_members;
