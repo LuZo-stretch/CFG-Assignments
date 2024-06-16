@@ -43,3 +43,15 @@ VALUES
 (6, 'Creepy cinema', 'Greenwich', 2),
 (7, 'Falling apart cinema', 'Greenwich', 1),
 (8, 'Dating Spot', 'Bethnal Green', 5);
+
+INSERT INTO club_members
+(member_id, member_name, member_email, area)
+VALUES
+(1, 'Lucia Galarza', 'lucia@gmailcom', 'Brixton'),
+(2, 'Farolito Perez', 'farolito@gmail.com', 'Soho'),
+(3, 'Lorna Jane', 'lorna@gmail.com', 'West Norwood'),
+(4, 'Perico Palotes', 'perico@gmail.com', 'Greenwich'),
+(5, 'Coco Galarza', 'coquito@gmail.com', 'Brixton'),
+(6, 'Florence Galarza', 'florpi@gmail.com', 'Brixton'),
+(7, 'Fulano Tal', 'fulanito@gmail.com', 'Bethnal Green'),
+(8, 'Mengano Cual', 'menganito@gmailcom', 'Greenwich');
