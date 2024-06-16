@@ -123,3 +123,45 @@ GROUP BY area
 HAVING AVG(plushness) > 2
 ORDER BY average_plushness DESC; --- AGGREGATE FUNCTION
 
+SELECT cm.member_name, cm.member_email --- JOIN TO GROUP ALL CLUB MEMBERS THAT ARE IN THE BRIXTON AREA WITH THE RELEVANT CINEMA
+FROM club_members cm
+INNER JOIN
+cinemas c
+ON
+c.area = cm.area WHERE c.area = 'Brixton';
+
+SELECT c.cinema_name, s.show_time --- JOIN TO SHOW ALL SHOW TIMES AT EACH CINEMA
+FROM cinemas c
+LEFT JOIN shows s ON c.cinema_id = s.cinema_id
+ORDER BY  c.cinema_name;
+
+SELECT cm.member_name, cm.member_email, c.cinema_name, m.title AS movie_title, s.show_time --- JOIN TO SHOW ALL THE MEMBERS THE CINEMAS, MOVIES AND SHOW TIMES IN THE SAME AREA
+FROM club_members cm
+INNER JOIN cinemas c ON cm.area = c.area
+INNER JOIN shows s ON c.cinema_id = s.cinema_id
+INNER JOIN movies m ON s.movie_id = m.movie_id
+ORDER BY c.cinema_name, s.show_time;
+
+SELECT member_name, UPPER(member_email) AS uppercase_email
+FROM club_members;
+
+SELECT title, genre, DATE_FORMAT(show_time, '%H:%i') AS formatted_show_time
+FROM shows
+INNER JOIN movies ON shows.movie_id = movies.movie_id;
+
+SELECT CONCAT(cinema_name, ', ', area) AS cinema_address
+FROM cinemas;
+
+DELIMITER //
+CREATE PROCEDURE GetMoviesByCinemaBis(cinema_id_param INTEGER)
+BEGIN
+SELECT m.title, m.genre, m.rating, c.cinema_name
+FROM movies m
+INNER JOIN shows s ON m.movie_id = s.movie_id
+INNER JOIN cinemas c ON s.cinema_id = c.cinema_id
+WHERE s.cinema_id = cinema_id_param;
+END //
+
+DELIMITER ;
+
+CALL GetMoviesByCinemaBis(1);
